@@ -20,7 +20,6 @@ function sumOfNumbers(arrayOfNumbers) {
         sum += arrayOfNumbers[i];
     }
     return sum;
-//    return arrayOfNumbers.length;
 }
 assignment.sumOfNumbers = sumOfNumbers;
 
@@ -53,9 +52,21 @@ function countEvenNumbers(arrayOfNumbers) {
  * @returns Array the converted temperatures in Fahrenheit
  */
 function celsiusToFahrenheit(arrayOfNumbers) {
-    return arrayOfNumbers;
+    let fahrenheitArray = [];
+
+    function convertCelsiusToFahrenheit(celsiusTemp) {
+        let fahreinheitTemp = (celsiusTemp * 1.8) + 32;
+        return fahreinheitTemp;
+    }
+
+    arrayOfNumbers.forEach(number => {
+        let fahreinheit = convertCelsiusToFahrenheit(number);
+        fahrenheitArray.push(Math.trunc(fahreinheit));
+    });
+
+    return fahrenheitArray;
 }
-// assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
 
 // ========================
